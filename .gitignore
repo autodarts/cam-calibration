@@ -1,0 +1,5 @@
+venv/
+calibrationImages/
+__pycache__/
+.idea/
+git/
