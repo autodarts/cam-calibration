@@ -3,3 +3,4 @@ calibrationImages/
 __pycache__/
 .idea/
 git/
+distortion.json
