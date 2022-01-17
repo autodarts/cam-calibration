@@ -21,8 +21,23 @@ class CreateDistortion:
         distortion = []
 
         directory_contents = os.listdir(self.folder)
-        for x in directory_contents:
-            distortion.append(self.createDistortion(x, width, height))
+
+        # A lot of boilerplate :(
+        if len(directory_contents) == 1:
+            dist = self.createDistortion(directory_contents[0], width, height)
+            distortion.append(dist)
+            distortion.append(dist)
+            distortion.append(dist)
+        elif len(directory_contents) == 2:
+            distortion.append(self.createDistortion(directory_contents[0], width, height))
+            dist = self.createDistortion(directory_contents[1], width, height)
+            distortion.append(dist)
+            distortion.append(dist)
+        elif len(directory_contents) == 3:
+            for x in directory_contents:
+                distortion.append(self.createDistortion(x, width, height))
+        else:
+            print("Number of directories in calibrationImages needs to be between 1 - 3")
 
         with open('distortion.json', 'w') as f:
             json.dump(distortion, f, indent=4)

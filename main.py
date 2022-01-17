@@ -22,6 +22,14 @@ def main():
     if width is None:
         width = 1080
 
+    """"" Not supported jet
+    withScreen = getCommandValues("-withScreen")
+    if withScreen is None:
+        withScreen = False
+    else:
+        withScreen = True
+    """
+
     if len(sys.argv) >= 2:
         command = sys.argv[1]
 

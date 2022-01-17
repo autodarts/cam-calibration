@@ -32,19 +32,23 @@ class CaptureImages:
         j = 0
         snap = False
         while True:
-            if x % 30 * 5 == 0:
-                snap = True
-                j += 1
-            x += 1
-
             for i, cam in enumerate(cams):
+                if x % 60 * 5 == 0:
+                    snap = True
+                    j += 1
+                x += 1
+
                 if snap:
                     cv2.imwrite(f'{self.folder}/{cam.device}/img_{self.width}x{self.height}_{j}.jpg', frame)
-                    print("Captured: ", cam.device)
+                    print("Captured")
+                    snap = False
+                    frame = cam.read()
                     cv2.rectangle(frame, (0, 0), (self.width, self.height), (0, 255, 0), 10)
-                frame = cam.read()
-                cv2.imshow(f'Cam {i}', frame)
-            snap = False
+                    cv2.imshow(f'Cam {i}', frame)
+                else:
+                    frame = cam.read()
+                    cv2.imshow(f'Cam {i}', frame)
+
             if cv2.waitKey(33) == 27:
                 break  # esc to quit
 
