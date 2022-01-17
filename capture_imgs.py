@@ -1,5 +1,3 @@
-import threading
-
 import cv2
 from pathlib import Path
 
@@ -28,20 +26,25 @@ class CaptureImages:
         for id in self.camIds:
             Path(self.folder, str(id)).mkdir(parents=True, exist_ok=True)
 
+        snap = []
+        for i in range(len(self.camIds)):
+            print(i)
+            snap.append(False)
+
         x = 1
         j = 0
-        snap = False
-        while True:
-            for i, cam in enumerate(cams):
-                if x % 60 * 5 == 0:
-                    snap = True
-                    j += 1
-                x += 1
 
-                if snap:
+        while True:
+            if x % 60 * 5 == 0:
+                for i in range(len(self.camIds)):
+                    snap[i] = True
+                j += 1
+            x += 1
+            for i, cam in enumerate(cams):
+                if snap[i]:
                     cv2.imwrite(f'{self.folder}/{cam.device}/img_{self.width}x{self.height}_{j}.jpg', frame)
-                    print("Captured")
-                    snap = False
+                    print("Captured", cam.device)
+                    snap[i] = False
                     frame = cam.read()
                     cv2.rectangle(frame, (0, 0), (self.width, self.height), (0, 255, 0), 10)
                     cv2.imshow(f'Cam {i}', frame)
