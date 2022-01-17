@@ -67,6 +67,8 @@ I glued the chess pattern to a cardboard so that it's possible to hold it in fro
 As soon as you start the tool, the amount of windows will open like the amount of calibrating cams. Once they are open the tool will take a picture about every second from every cam and stored in a folder called calibrationImages with subfolders named by the deviceIds. The more images you will create the more accurate you distortion.json will be. I did it with around 50 pictures.
 When the images are made try to get the chessboard on whole on the camera picture. You can see that in the windows which are visible and get as many angles you can. Place it flat to the board, turn it, lift it and so on. Here are some example pictures.
 
+<img src="https://learnopencv.com/wp-content/uploads/2020/02/calibration-patterns.gif" width="40%" height="40%">
+
 <img src="examplePictures/img_1920x1080_38_cam1.jpg" width="40%" height="40%">
 <img src="examplePictures/img_1920x1080_38_cam2.jpg" width="40%" height="40%">
 <img src="examplePictures/img_1920x1080_38_cam3.jpg" width="40%" height="40%">
