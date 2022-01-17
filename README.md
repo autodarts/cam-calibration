@@ -88,7 +88,7 @@ As soon as you are done you can stop the tool by pressing ESC or Ctrl + C in the
 
 You can than simply create the distortion.json with the command
 
-    distortion -w 800 -h 600
+    python3 main.py distortion -w 800 -h 600
 
 Please make sure you're using the same resolution as you created the images. If not the distortion.json will be wrong and your calibration won't work.
 When the tool is done a new file called distortion.json is placed in the folder. Copy it to your .autodarts config folder and you are done.
