@@ -1,6 +1,7 @@
 This is a tool to generate a distortion.json which can be used to remove the distortion in Autodarts. But here sadly you will need a computer with linux installed and a desktop environment.
 
-I will check if I can also run it on Windows later and try to build a Raspberry Pi edition. We will work on a solution where you can use this tool on a desctopless device like the Pi.
+I will check if I can also run it on Windows later and try to build a Raspberry Pi edition. 
+[HERE](README_headless.md) is a guide, howto setup a headless (without Desktop) environment.
 
 ### Requirements and installation
 
