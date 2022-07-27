@@ -18,7 +18,7 @@ class Cam:
         self.width = width
         self.height = height
 
-        self.video_capture = cv2.VideoCapture(self.device, cv2.CAP_V4L2)
+        self.video_capture = cv2.VideoCapture(self.device)
         self.video_capture.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*"MJPG"))
         self.video_capture.set(cv2.CAP_PROP_FPS, self.fps)
         self.video_capture.set(cv2.CAP_PROP_FRAME_WIDTH, self.width)
